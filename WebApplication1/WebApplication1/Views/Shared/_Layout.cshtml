@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+
+    
+    <div class="a" >
+        <style>
+            body {
+                background: #c7b39b url(fon.jpg); /* Цвет фона и путь к файлу */
+                color: #000; /* Цвет текста */
+            }
+        </style>
+        <b><i>Tower of London</i></b>
+    </div>
+
+    <div class="c">
+     
+
+       <p>@Html.ActionLink("История", "History", "Home")</p> 
+        <p>@Html.ActionLink("Картинки", "Image", "Home")</p> 
+       <p>@Html.ActionLink("Музыка", "Music", "Home")</p> 
+
+
+
+    </div>
+    @RenderBody()
+        <style>
+        .a {
+            float: left;
+            background: lightpink;
+            width: 100%;
+            height: 100px;
+            padding: 20px;
+            font-size: 60px;
+            text-align: center;
+        }
+
+        .b {
+            float: left;
+            background: white;
+            text-align: center;
+            width: 67%;
+            padding: 30px;
+            font-size: 23px;
+        }
+
+            .c {
+                float: left;
+                height: 350px;
+                padding: 15px;
+                font-size: 20px;
+                text-align: left;
+                background: lightyellow;
+            }
+
+            .d{
+color:black;
+background: lightgrey;
+text-align:center;
+width: 85%;
+padding: 7%;
+font-size: 25px;
+font-color: blue;
+}
+        }
+    </style>
+</body>
+</html>
