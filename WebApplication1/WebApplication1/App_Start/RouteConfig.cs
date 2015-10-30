@@ -47,10 +47,31 @@ namespace WebApplication1
              defaults: new { controller = "Home", action = "History", id = UrlParameter.Optional }
          );
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
+                name: "Index",
+                url: "Index",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
+            routes.MapRoute(
+               name: "Image",
+               url: "Image",
+               defaults: new { controller = "Home", action = "Image", id = UrlParameter.Optional }
+           );
+
+
+            routes.MapRoute(
+              name: "Music",
+              url: "Music",
+              defaults: new { controller = "Home", action = "Music", id = UrlParameter.Optional }
+          );
+
+            routes.MapRoute(
+              name: "History",
+              url: "History",
+              defaults: new { controller = "Home", action = "History", id = UrlParameter.Optional }
+          );
+
         }
     }
 }
