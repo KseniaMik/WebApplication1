@@ -9,7 +9,22 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
- 
+        [HttpPost]
+        public ActionResult Index(Initializ init)
+        {
+
+            Response.Cookies["userName"].Value = init.kto;
+            Response.Cookies["userAge"].Value = init.age;
+
+            return RedirectToAction("Index");
+        }
+        
+        public ActionResult  Index()
+
+        {
+
+            return View();
+        }
 
         public ActionResult Image()
         {
@@ -20,6 +35,37 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        public ActionResult Comment()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Comment(Comment comment)
+        {
+            var comments = Session["comments"] as List<Comment>;
+            if (comments == null)
+            {
+                comments = new List<Comment>();
+            }
+            comments.Add(comment);
+            Session["comments"] = comments;
+
+            return RedirectToAction("Comments");
+        }
+
+
+        public ActionResult Comments()
+        {
+            var comments = Session["comments"] as List<Comment>;
+            
+           
+          
+
+            return View(comments);
+        }
+
 
         public ActionResult Music()
         {

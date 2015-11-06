@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.Comment
+@{
+    ViewBag.Title = "Comment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Comment"))
+{
+    <div>
+        
+        
+        <p>
+            <br>
+            Введите свое имя
+            @Html.TextBoxFor(x => x.kto)
+        </p>
+        <br>
+    <p>
+        Введите Комментарий
+       
+            @Html.TextBoxFor(x => x.chto)
+
+        <input type="submit" value="Отправить">
+</p>
+    </div>
+
+}
+

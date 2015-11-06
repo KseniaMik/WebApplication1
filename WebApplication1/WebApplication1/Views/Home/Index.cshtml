@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.Initializ
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ДОБРО ПОЖАЛОВАТЬ НА САЙТ</h2>
+
+@using (Html.BeginForm("Initializ"))
+{
+    <div>
+
+
+        <p>
+            <br>
+            Введите свое имя
+            @Html.TextBoxFor(x => x.kto)
+        </p>
+        <br>
+        <p>
+            Введите Возраст
+
+            @Html.TextBoxFor(x => x.age)
+
+            <input type="submit" value="Отправить">
+        </p>
+    </div>
+
+}

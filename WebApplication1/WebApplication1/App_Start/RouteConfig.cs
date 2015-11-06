@@ -13,7 +13,8 @@ namespace WebApplication1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            
+        
+
             routes.MapRoute(
                 name: "Index",
                 url: "Index",
@@ -39,38 +40,25 @@ namespace WebApplication1
               url: "History",
               defaults: new { controller = "Home", action = "History", id = UrlParameter.Optional }
           );
-         
-
-             routes.MapRoute(
-             name: "olol",
-             url: "",
-             defaults: new { controller = "Home", action = "History", id = UrlParameter.Optional }
+            routes.MapRoute(
+             name: "Comment",
+             url: "Comment",
+             defaults: new { controller = "Home", action = "Comment", id = UrlParameter.Optional }
          );
             routes.MapRoute(
-                name: "Index",
-                url: "Index",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+         name: "Comments",
+         url: "Comments",
+         defaults: new { controller = "Home", action = "Comments", id = UrlParameter.Optional }
+     );
 
 
             routes.MapRoute(
-               name: "Image",
-               url: "Image",
-               defaults: new { controller = "Home", action = "Image", id = UrlParameter.Optional }
-           );
+         name: "Default",
+         url: "{controller}/{action}/{id}",
+         defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+         );
 
 
-            routes.MapRoute(
-              name: "Music",
-              url: "Music",
-              defaults: new { controller = "Home", action = "Music", id = UrlParameter.Optional }
-          );
-
-            routes.MapRoute(
-              name: "History",
-              url: "History",
-              defaults: new { controller = "Home", action = "History", id = UrlParameter.Optional }
-          );
 
         }
     }

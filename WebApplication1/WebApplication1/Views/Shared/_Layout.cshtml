@@ -11,7 +11,22 @@
 </head>
 <body>
 
+    <div>
+        <p>
+           
+           
+            @{ 
+                var re = " ";
+                if (Request.Cookies["userName"] != null && Request.Cookies["userAge"] != null)
+                {
+                    re = Request.Cookies["userName"].Value + "  " + Request.Cookies["userAge"].Value;
 
+                }
+                else { re = "ГОСТЬ"; }
+           }
+           Привет @re
+        </p>
+    </div>
     
     <div class="a" >
         <style>
@@ -29,7 +44,8 @@
        <p>@Html.ActionLink("История", "History", "Home")</p> 
         <p>@Html.ActionLink("Картинки", "Image", "Home")</p> 
        <p>@Html.ActionLink("Музыка", "Music", "Home")</p> 
-
+        <p>@Html.ActionLink("Комментарий", "Comment", "Home")</p> 
+        <p>@Html.ActionLink("Комментарии", "Comments", "Home")</p> 
 
 
     </div>

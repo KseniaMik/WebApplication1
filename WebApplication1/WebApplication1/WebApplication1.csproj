@@ -175,8 +175,10 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Initializ.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Musictime.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -237,6 +239,9 @@
     <Content Include="Views\Home\Image.cshtml" />
     <Content Include="Views\Home\History.cshtml" />
     <Content Include="Views\Home\Music.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Comment.cshtml" />
+    <Content Include="Views\Home\Comments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
