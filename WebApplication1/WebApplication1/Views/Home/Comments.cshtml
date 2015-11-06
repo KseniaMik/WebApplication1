@@ -1,0 +1,22 @@
+﻿@model List<WebApplication1.Models.Comment>
+@{
+    ViewBag.Title = "Comments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var comment in Model)
+{
+    <div>
+        
+        <p>
+            Имя пользолвателя
+            @comment.kto
+        </p>
+        <p>
+            Коммент!!
+            @comment.chto
+        </p>
+        --------------------------
+    </div>
+}
