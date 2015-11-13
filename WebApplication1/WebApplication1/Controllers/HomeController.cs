@@ -9,20 +9,8 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpPost]
-        public ActionResult Index(Initializ init)
+        public ActionResult Index()
         {
-
-            Response.Cookies["userName"].Value = init.kto;
-            Response.Cookies["userAge"].Value = init.age;
-
-            return RedirectToAction("Index");
-        }
-        
-        public ActionResult  Index()
-
-        {
-
             return View();
         }
 
