@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Тег SELECT</title>
+  <link href="Style.css" rel="stylesheet">
+  <script src="Js.js"></script>
+ </head>
+ <body>  
+  <form method="post" action="input5.php">
+   <p><b>Choose movies that you have ever seen </b></p>
+   <p><input type="checkbox" name="option1" value="a1" checked>The Theory Of Everything<Br>
+   <input type="checkbox" name="option2" value="a2">Kingsman: The Secret Service<Br>
+   <input type="checkbox" name="option3" value="a3">Ant-Man<Br> 
+   <input type="checkbox" name="option4" value="a4">Avengers: Age of Ultron<Br> 
+   <input type="checkbox" name="option5" value="a5">The Man from U.N.C.L.E</p>
+
+  
+   <p><select size="4" multiple name="genre[]">
+    <option disabled>Choose the genre</option>
+    <option value="Comedy">Comedy</option>
+    <option selected value="Horrow">Horrow</option>
+    <option value="Triller">Triller</option>
+    <option value="Drama">Drama</option>
+   </select></p>
+   <p><input type="submit" value="Post"></p>
+  </form>
+
+
+
+<div id=carousel>
+<figure id=spinner>
+<img src="uncle.jpg" alt="">
+<img src="avengers.jpeg" alt="">
+<img src="Ant-Man.jpg" alt="">
+<img src="kingsman.jpg" alt="">
+<img src="theory.jpg" alt="">
+</figure>
+</div>
+<span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
+<span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
+
+
+
+ </body>
+</html>
