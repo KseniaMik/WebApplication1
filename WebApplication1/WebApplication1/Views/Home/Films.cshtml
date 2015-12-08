@@ -1,0 +1,45 @@
+﻿@model List<WebApplication1.Models.Movie>
+@{
+    ViewBag.Title = "Films";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var movie in Model)
+{
+    <div>
+              
+       <table margin-left:30px  border="1" width="350" cellpadding="8" >
+            <tr>
+                <td>
+                    <p>
+                        Название фильма
+                        <b><font size="3">@movie.Name</font> </b>
+                    </p>
+                    <p>
+                        Жанр:
+                        <font size="3">@movie.ganr</font>
+                    </p>
+
+                    <p>
+                        Год создания:
+                        <font size="3">@movie.Produce.ToString("yyyy")</font>
+                    </p>
+
+                    <p>
+                        <a href="@Url.Action("Remove", new { IDdel = movie.Id})">
+                            Хотите удалить? НАЖМИТЕ!!!
+                        </a>
+                    </p>
+                
+                </td>
+                
+            </tr>
+            
+        </table>
+
+        </div>
+
+
+
+
+}

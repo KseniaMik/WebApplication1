@@ -170,13 +170,18 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAO\Addedfilm.cs" />
+    <Compile Include="Database\DBmovieContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Help.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Initializ.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Musictime.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,11 +190,14 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\image\Ant-Man.jpg" />
-    <Content Include="Content\image\avengers.jpeg" />
-    <Content Include="Content\image\kingsman.jpg" />
-    <Content Include="Content\image\theory.jpg" />
-    <Content Include="Content\image\uncle.jpg" />
+    <Content Include="Content\image\1.jpg" />
+    <Content Include="Content\image\2.jpg" />
+    <Content Include="Content\image\3.jpg" />
+    <Content Include="Content\image\4.jpg" />
+    <Content Include="Content\image\5.jfif" />
+    <Content Include="Content\image\6.jpg" />
+    <Content Include="Content\image\7.png" />
+    <Content Include="Content\image\8.jpg" />
     <Content Include="Content\music\System Of A Down - Lonely Day [с сайта www.ololo.fm].mp3" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -241,12 +249,13 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Image.cshtml" />
-    <Content Include="Views\Home\History.cshtml" />
     <Content Include="Views\Home\Music.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Comment.cshtml" />
     <Content Include="Views\Home\Comments.cshtml" />
+    <Content Include="Views\Home\Films.cshtml" />
+    <Content Include="Views\Home\Filters.cshtml" />
+    <Content Include="Views\Home\AddFilm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

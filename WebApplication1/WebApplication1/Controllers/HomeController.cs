@@ -3,27 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Database;
 using WebApplication1.Models;
+using WebApplication1.DAO;
 
 namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpPost]
+
+        public ActionResult Index(Initializ init)
+        {
+            Response.Cookies["userName"].Value = init.kto;
+            Response.Cookies["userAge"].Value = init.age;
+
+
+
+            return RedirectToAction("Index");
+        }
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Image()
+        public List<Movie> GetAllFilms()
         {
-            return View();
+            using (var db = new DbMovieContext())
+            {
+                return db.Movies.ToList();
+
+            }
+        }
+        public List<Movie> GetAllFilmsOld()
+        {
+            List<Movie> movies = new List<Movie>();
+
+            var film = new Movie("The man from U.N.C.L.E", Genre.Action, new DateTime(2007, 5, 18));
+
+            movies.Add(film);
+
+            film = new Movie
+            {   
+                
+                Produce = new DateTime(2009, 2, 15),
+                ganr = Genre.Drama,
+                Name = "The Ant-Man"
+            };
+            movies.Add(film);
+
+            return movies;
         }
 
-        public ActionResult History()
-        {
-            return View();
-        }
-
+        
         public ActionResult Comment()
         {
             return View();
@@ -47,10 +79,6 @@ namespace WebApplication1.Controllers
         public ActionResult Comments()
         {
             var comments = Session["comments"] as List<Comment>;
-            
-           
-          
-
             return View(comments);
         }
 
@@ -58,8 +86,63 @@ namespace WebApplication1.Controllers
         public ActionResult Music()
         {
             var timemus = new Musictime();
-            timemus.songtime = new DateTime(2008,01,26);
+            timemus.songtime = new DateTime(2008, 01, 26);
             return View(timemus);
         }
+
+        public ActionResult Films()
+        {
+            var model = Addedfilm.AllFilms();
+            return View(model);
+        }
+
+        public ActionResult FilterdFilms(Models.Filter filter)
+        {
+            var model = new List<Movie>();
+            if (filter == null)
+            {
+                model = GetAllFilms();
+            }
+            else
+            {
+                model = GetAllFilms();
+                model = model.Where(x => x.ganr == filter.genre || x.Produce < filter.data).ToList();
+            }
+
+            return View("Films", model);
+        }
+
+        // фильтрация фильмов   
+        public ActionResult Filters()
+        {
+            return View();
+        }
+
+
+        public ActionResult AddFilm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddFilm (Movie movi)
+        {
+            Addedfilm.Saver(movi);
+            return RedirectToAction("Films");
+
+        }
+
+
+        public ActionResult Remove(int IDdel)
+        {
+            Addedfilm.Delete(IDdel);
+            return RedirectToAction("Films");
+        }
+
+
+
+
+
+
     }
 }

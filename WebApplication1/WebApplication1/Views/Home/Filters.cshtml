@@ -1,0 +1,28 @@
+﻿@using WebApplication1.Helper
+@model WebApplication1.Models.Filter
+@{
+    ViewBag.Title = "Filter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @{
+        var allGenres = Help.AllGenres;
+        var sli = allGenres.Select(x => new SelectListItem
+        {
+            Value = x.ToString(),
+            Text = x.ToString()
+        }).ToList();
+     }
+
+@using (Html.BeginForm("FilterdFilms", "Home"))
+{
+    <div>
+        <p>Выберите жанр @Html.DropDownListFor(x=> x.genre,sli)</p>
+        <p>Введите год @Html.TextBoxFor(x => x.data)</p>
+        <input type="submit" value="Отправить">
+    </div>
+}
+
+</div>
+

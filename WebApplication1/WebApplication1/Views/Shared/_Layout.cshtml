@@ -25,7 +25,7 @@
                 }
                 else { re = "ГОСТЬ"; }
            }
-           Привет @re
+           Привет @re !!!
         </p>
     </div>
     
@@ -34,34 +34,38 @@
         <b><i>Tower of London</i></b>
     </div>
 
-
-    <div class="c">
-     
-
-       <p>@Html.ActionLink("История", "History", "Home")</p> 
-        <p>@Html.ActionLink("Картинки", "Image", "Home")</p> 
-       <p>@Html.ActionLink("Музыка", "Music", "Home")</p> 
-        <p>@Html.ActionLink("Комментарий", "Comment", "Home")</p> 
-        <p>@Html.ActionLink("Комментарии", "Comments", "Home")</p> 
-
-
-    </div>
-
     <div>
         <div id=carousel>
             <figure id=spinner>
-                <img src="@Url.Content("~/Content/image/uncle.jpg")" alt="">
-                <img src="@Url.Content("~/Content/image/avengers.jpeg")" alt="">
-                <img src="@Url.Content("~/Content/image/Ant-Man.jpg")" alt="">
-                <img src="@Url.Content("~/Content/image/kingsman.jpg")" alt="">
-                <img src="@Url.Content("~/Content/image/theory.jpg")" alt="">
+                <img src="@Url.Content("~/Content/image/1.jpg")" width="518" height="298" alt="">
+                <img src="@Url.Content("~/Content/image/2.jpg")"  width="518" height="298" alt="">
+                <img src="@Url.Content("~/Content/image/3.jpg")" width="518" height="298" alt="">
+                <img src="@Url.Content("~/Content/image/4.jpg")" width="518" height="298" alt="">
+                <img src="@Url.Content("~/Content/image/5.jfif")" width="518" height="298" alt="">
+                <img src="@Url.Content("~/Content/image/6.jpg")" width="518" height="298" alt="">
+                <img src="@Url.Content("~/Content/image/7.png")" width="518" height="298" alt="">
+                <img src="@Url.Content("~/Content/image/8.jpg")" width="518" height="298" alt="">
             </figure>
         </div>
         <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
         <span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
 
-     
+
     </div>
+    <div class="c">
+     
+ 
+       <p>@Html.ActionLink("Музыка", "Music", "Home")</p> 
+        <p>@Html.ActionLink("Комментарий", "Comment", "Home")</p> 
+        <p>@Html.ActionLink("Комментарии", "Comments", "Home")</p> 
+        <p>@Html.ActionLink("Все фильмы", "Films", "Home")</p> 
+        <p>@Html.ActionLink("Фильтровка", "Filters", "Home")</p> 
+      
+
+
+    </div>
+
+   
     @RenderBody()
         
 </body>

@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Models.Movie
+@using WebApplication1.Helper
+
+@{
+    ViewBag.Title = "AddFilms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddFilm", "Home"))
+{
+    var allGenres = Help.AllGenres;
+    var sli = allGenres.Select(x => new SelectListItem
+    {
+        Value = x.ToString(),
+        Text = x.ToString()
+    }).ToList();
+    <div>
+        <p>Введите название фильма @Html.TextBoxFor(x => x.Name)</p>
+        <p>Выберите жанр @Html.DropDownListFor(x => x.ganr, sli)</p>
+        <p>Введите год @Html.TextBoxFor(x => x.Produce)</p>
+        <input type="submit" value="Отправить">
+    </div>
+}
+
+
