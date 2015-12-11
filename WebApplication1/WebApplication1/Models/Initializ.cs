@@ -9,6 +9,6 @@ namespace WebApplication1.Models
     {
 
         public string kto { get; set; }
-        public string age { get; set; }
+
     }
 }

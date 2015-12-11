@@ -3,19 +3,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @using (Html.BeginForm("Comment"))
 {
-<h2>ДОБРО ПОЖАЛОВАТЬ НА САЙТ</h2>
+
 
 <p>
-    Name
+    Введите Ваше имя
     @Html.TextBoxFor(x => x.kto)
-</p>
-
-
-<p>
-    Age
-    @Html.TextBoxFor(y => y.age)
     <input type="submit" value="Отправить">
 
 </p>

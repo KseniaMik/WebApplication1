@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         public ActionResult Index(Initializ init)
         {
             Response.Cookies["userName"].Value = init.kto;
-            Response.Cookies["userAge"].Value = init.age;
+          
 
 
 
@@ -129,7 +129,7 @@ namespace WebApplication1.Controllers
                     var god = new DateTime(filter.year, 1, 1);
                     model = model.Where(x => x.Produce > god).ToList();
                 }
-                //model = model.Where(x => x.ganr == filter.genre || x.Produce > filter.data).ToList();
+             
             }
 
             return View("Films", model);
