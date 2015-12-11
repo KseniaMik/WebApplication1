@@ -12,6 +12,10 @@
             <tr>
                 <td>
                     <p>
+                        <img src=" ~/Content/image/@movie.Images" width="300" height="150" />
+                       
+                    </p>
+                    <p>
                         Название фильма
                         <b><font size="3">@movie.Name</font> </b>
                     </p>
@@ -26,10 +30,15 @@
                     </p>
 
                     <p>
+                        Описание:
+                        <font size="3">@movie.Opisanie</font> 
+                    </p>
+                    <p>
                         <a href="@Url.Action("Remove", new { IDdel = movie.Id})">
                             Хотите удалить? НАЖМИТЕ!!!
                         </a>
                     </p>
+                   
                 
                 </td>
                 

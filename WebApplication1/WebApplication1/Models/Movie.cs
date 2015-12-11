@@ -27,7 +27,8 @@ namespace WebApplication1.Models
 
         public long Id { get; set; }
        
-
+        public string Images { get; set; }
+        public string Opisanie { get; set; }
     }
 }
 

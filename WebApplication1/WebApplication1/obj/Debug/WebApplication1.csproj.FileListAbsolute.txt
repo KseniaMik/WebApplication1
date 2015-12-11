@@ -343,3 +343,7 @@ C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplicat
 C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.InitialCreate.resources
+C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.Addimage.resources
+C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.Description.resources

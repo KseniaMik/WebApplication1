@@ -176,6 +176,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\Help.cs" />
+    <Compile Include="Migrations\201512041629189_InitialCreate.cs" />
+    <Compile Include="Migrations\201512041629189_InitialCreate.Designer.cs">
+      <DependentUpon>201512041629189_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512111738260_Addimage.cs" />
+    <Compile Include="Migrations\201512111738260_Addimage.Designer.cs">
+      <DependentUpon>201512111738260_Addimage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512111749343_Description.cs" />
+    <Compile Include="Migrations\201512111749343_Description.Designer.cs">
+      <DependentUpon>201512111749343_Description.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -256,6 +269,7 @@
     <Content Include="Views\Home\Films.cshtml" />
     <Content Include="Views\Home\Filters.cshtml" />
     <Content Include="Views\Home\AddFilm.cshtml" />
+    <Content Include="Views\Home\Karusel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -267,6 +281,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512041629189_InitialCreate.resx">
+      <DependentUpon>201512041629189_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512111738260_Addimage.resx">
+      <DependentUpon>201512111738260_Addimage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512111749343_Description.resx">
+      <DependentUpon>201512111749343_Description.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

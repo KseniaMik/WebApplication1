@@ -1,87 +1,76 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – приложение ASP.NET</title>
-     <script src=@Url.Content("~/Scripts/JS.js")></script> 
+    <script src=@Url.Content("~/Scripts/JS.js")></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
 
-    <div>
-        <p>
-           
-           
-            @{ 
-                var re = " ";
-                if (Request.Cookies["userName"] != null && Request.Cookies["userAge"] != null)
-                {
-                    re = Request.Cookies["userName"].Value + "  " + Request.Cookies["userAge"].Value;
-
-                }
-                else { re = "ГОСТЬ"; }
-           }
-           Привет @re !!!
-        </p>
-    </div>
     
-    <div class="a" >
 
+        <div class="row">
+            @{
+                Html.RenderAction("Karusel", "Home");
+            }
 
-
-
-
-
-     
-        <b><i>Tower of London</i></b>
-    </div>
-
-    <div>
-        <div id=carousel>
-            <figure id=spinner>
-              
-                <a href="@Url.Action("Films", "Home")">
-                    <img src="@Url.Content("~/Content/image/1.jpg")" width="518" height="298" alt="">
-                    <img src="@Url.Content("~/Content/image/2.jpg")" width="518" height="298" alt="">
-                    <img src="@Url.Content("~/Content/image/3.jpg")" width="518" height="298" alt="">
-                    <img src="@Url.Content("~/Content/image/4.jpg")" width="518" height="298" alt="">
-                    <img src="@Url.Content("~/Content/image/5.jfif")" width="518" height="298" alt="">
-                    <img src="@Url.Content("~/Content/image/6.jpg")" width="518" height="298" alt="">
-                    <img src="@Url.Content("~/Content/image/7.png")" width="518" height="298" alt="">
-                    <img src="@Url.Content("~/Content/image/8.jpg")" width="518" height="298" alt="">
-                </a>
-            </figure>
         </div>
-        <span style=float:left class=ss-icon onclick="galleryspin('-')">&lt;</span>
-        <span style=float:right class=ss-icon onclick="galleryspin('')">&gt;</span>
-
-
-    </div>
-
-    
-
-    <div class="c">
-     
  
-       <p>@Html.ActionLink("Музыка", "Music", "Home")</p> 
-        <p>@Html.ActionLink("Комментарий", "Comment", "Home")</p> 
-        <p>@Html.ActionLink("Комментарии", "Comments", "Home")</p> 
-        <p>@Html.ActionLink("Все фильмы", "Films", "Home")</p> 
-        <p>@Html.ActionLink("Фильтровка", "Filters", "Home")</p> 
-      
+    <div class="container">
+        <div class="row">
+
+            <p>
 
 
-    </div>
+                @{
+                    var re = " ";
+                    if (Request.Cookies["userName"] != null && Request.Cookies["userAge"] != null)
+                    {
+                        re = Request.Cookies["userName"].Value + "  " + Request.Cookies["userAge"].Value;
 
-    <div class="main">
+                    }
+                    else { re = "ГОСТЬ"; }
+                }
+                Привет @re !!!
+            </p>
+        </div>
 
 
-        @RenderBody()
-    </div>
-        
+        <div class="page-header">
+            <h1>KINOpoisk </h1>
+        </div>
+        </div>
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="menu">
+                    <div class="col-md-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li role="presentation">@Html.ActionLink("Саундтреки", "Music", "Home")</li>
+                            <li role="presentation">@Html.ActionLink("Комментарий", "Comment", "Home")</li>
+                            <li role="presentation">@Html.ActionLink("Комментарии", "Comments", "Home")</li>
+                            <li role="presentation">@Html.ActionLink("Все фильмы", "Films", "Home")</li>
+                            <li role="presentation">@Html.ActionLink("Фильтровка", "Filters", "Home")</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-9">
+
+                    @RenderBody()
+                </div>
+
+            </div>
+        </div>
 </body>
 </html>

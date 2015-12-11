@@ -5,8 +5,9 @@
     ViewBag.Title = "AddFilms";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using (Html.BeginForm("AddFilm", "Home", FormMethod.Post,
+                  new { enctype = "multipart/form-data" }))
 
-@using (Html.BeginForm("AddFilm", "Home"))
 {
     var allGenres = Help.AllGenres;
     var sli = allGenres.Select(x => new SelectListItem
@@ -18,6 +19,11 @@
         <p>Введите название фильма @Html.TextBoxFor(x => x.Name)</p>
         <p>Выберите жанр @Html.DropDownListFor(x => x.ganr, sli)</p>
         <p>Введите год @Html.TextBoxFor(x => x.Produce)</p>
+        <p>Введите описание @Html.TextBoxFor(x => x.Opisanie)</p>
+        <p>
+            
+            <input type="file" name="file"/>
+        </p>
         <input type="submit" value="Отправить">
     </div>
 }

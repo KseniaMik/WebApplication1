@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using WebApplication1.Database;
 using WebApplication1.Models;
 using WebApplication1.DAO;
+using System.IO;
 
 namespace WebApplication1.Controllers
 {
@@ -32,9 +33,24 @@ namespace WebApplication1.Controllers
             using (var db = new DbMovieContext())
             {
                 return db.Movies.ToList();
-
             }
         }
+
+        public List<Movie> GetAllFilms(int take)
+        {
+            using (var db = new DbMovieContext())
+            {
+                return db.Movies.OrderByDescending(x => x.Id).Take(take).ToList();
+            }
+        }
+
+        public ActionResult Karusel()
+        {
+            var model = GetAllFilms(8);
+
+            return View(model);
+        }
+
         public List<Movie> GetAllFilmsOld()
         {
             List<Movie> movies = new List<Movie>();
@@ -44,8 +60,8 @@ namespace WebApplication1.Controllers
             movies.Add(film);
 
             film = new Movie
-            {   
-                
+            {
+
                 Produce = new DateTime(2009, 2, 15),
                 ganr = Genre.Drama,
                 Name = "The Ant-Man"
@@ -55,7 +71,7 @@ namespace WebApplication1.Controllers
             return movies;
         }
 
-        
+
         public ActionResult Comment()
         {
             return View();
@@ -98,6 +114,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult FilterdFilms(Models.Filter filter)
         {
+
             var model = new List<Movie>();
             if (filter == null)
             {
@@ -106,7 +123,13 @@ namespace WebApplication1.Controllers
             else
             {
                 model = GetAllFilms();
-                model = model.Where(x => x.ganr == filter.genre || x.Produce < filter.data).ToList();
+                model = model.Where(x => x.ganr == filter.genre).ToList();
+                if (filter.year> 1800)
+                {
+                    var god = new DateTime(filter.year, 1, 1);
+                    model = model.Where(x => x.Produce > god).ToList();
+                }
+                //model = model.Where(x => x.ganr == filter.genre || x.Produce > filter.data).ToList();
             }
 
             return View("Films", model);
@@ -121,12 +144,27 @@ namespace WebApplication1.Controllers
 
         public ActionResult AddFilm()
         {
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddFilm (Movie movi)
+        public ActionResult AddFilm(Movie movi)
         {
+            if (Request.Files.Count > 0)
+            {
+                var file = Request.Files[0];
+
+                if (file != null && file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    movi.Images = fileName;
+
+                    var path = Path.Combine(Server.MapPath("~/Content/image/"), fileName);
+                    file.SaveAs(path);
+                }
+            }
+
             Addedfilm.Saver(movi);
             return RedirectToAction("Films");
 

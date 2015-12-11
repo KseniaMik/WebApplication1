@@ -9,6 +9,6 @@ namespace WebApplication1.Models
     {
         public Genre genre { get; set; }
 
-        public DateTime data { get; set; }
+        public int year { get; set; }
     }
 }
