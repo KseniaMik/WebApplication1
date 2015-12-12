@@ -3,18 +3,21 @@
     ViewBag.Title = "Films";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
 @foreach (var movie in Model)
 {
     <div>
               
-       <table margin-left:30px  border="1" width="350" cellpadding="8" >
+       <table class="table table-striped" margin-left:30px  border="0" width="800" cellpadding="8" cellspacing="0">
             <tr>
-                <td>
+                <td width="244" >
                     <p>
-                        <img src=" ~/Content/image/@movie.Images" width="300" height="150" />
+                        <img src=" ~/Content/image/@movie.Images" width="240" height="150" class="img-rounded" />
                        
                     </p>
+                </td>
+                <td>
                     <p>
                         Название фильма
                         <b><font size="3">@movie.Name</font> </b>

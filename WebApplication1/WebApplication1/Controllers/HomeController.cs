@@ -21,7 +21,7 @@ namespace WebApplication1.Controllers
 
 
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Films");
         }
         public ActionResult Index()
         {
@@ -51,59 +51,14 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
-        public List<Movie> GetAllFilmsOld()
-        {
-            List<Movie> movies = new List<Movie>();
-
-            var film = new Movie("The man from U.N.C.L.E", Genre.Action, new DateTime(2007, 5, 18));
-
-            movies.Add(film);
-
-            film = new Movie
-            {
-
-                Produce = new DateTime(2009, 2, 15),
-                ganr = Genre.Drama,
-                Name = "The Ant-Man"
-            };
-            movies.Add(film);
-
-            return movies;
-        }
+     
 
 
-        public ActionResult Comment()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Comment(Comment comment)
-        {
-            var comments = Session["comments"] as List<Comment>;
-            if (comments == null)
-            {
-                comments = new List<Comment>();
-            }
-            comments.Add(comment);
-            Session["comments"] = comments;
-
-            return RedirectToAction("Comments");
-        }
-
-
-        public ActionResult Comments()
-        {
-            var comments = Session["comments"] as List<Comment>;
-            return View(comments);
-        }
-
+        
 
         public ActionResult Music()
         {
-            var timemus = new Musictime();
-            timemus.songtime = new DateTime(2008, 01, 26);
-            return View(timemus);
+          return View();
         }
 
         public ActionResult Films()

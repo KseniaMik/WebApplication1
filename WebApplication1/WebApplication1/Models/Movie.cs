@@ -12,12 +12,6 @@ namespace WebApplication1.Models
 
         }
 
-        public Movie(string name, Genre g, DateTime d)
-        {
-            Name = name;
-            ganr = g;
-            Produce = d;
-        }
 
         public virtual string Name { get; set; }
 

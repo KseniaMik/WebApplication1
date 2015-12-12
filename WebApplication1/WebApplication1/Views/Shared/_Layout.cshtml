@@ -12,41 +12,34 @@
 </head>
 <body>
 
-    
   
-                         
-     
-    <div class="row">
         @{
             Html.RenderAction("Karusel", "Home");
         }
 
-</div>
+
     <div class="container">
         <div class="row">
+            
+                <h4>
 
-            <p>
 
+                    @{
+                        var re = " ";
+                        if (Request.Cookies["userName"] != null)
+                        {
+                            re = Request.Cookies["userName"].Value;
 
-                @{
-                    var re = " ";
-                    if (Request.Cookies["userName"] != null)
-                    {
-                        re = Request.Cookies["userName"].Value;
-
+                        }
+                        else { re = "ГОСТЬ"; }
                     }
-                    else { re = "ГОСТЬ"; }
-                }
-                Привет @re !!!
-            </p>
+                    Привет @re !!!
+                </h4>
+            </div>                   
+           
         </div>
-
-
-        <div class="page-header">
-            <h1>KINOpoisk </h1>
-        </div>
-    </div>
-
+ 
+    <hr background-color: lightgray> 
 
         <div class="container">
 
@@ -54,11 +47,12 @@
                 <div class="menu">
                     <div class="col-md-3">
                         <ul class="nav nav-pills nav-stacked">
-                            <li role="presentation">@Html.ActionLink("Саундтреки", "Music", "Home")</li>
-                            <li role="presentation">@Html.ActionLink("Комментарий", "Comment", "Home")</li>
-                            <li role="presentation">@Html.ActionLink("Комментарии", "Comments", "Home")</li>
+
                             <li role="presentation">@Html.ActionLink("Все фильмы", "Films", "Home")</li>
                             <li role="presentation">@Html.ActionLink("Фильтровка", "Filters", "Home")</li>
+                            <li role="presentation">@Html.ActionLink("Добавить фильм", "AddFilm", "Home")</li>
+                            <li role="presentation">@Html.ActionLink("Саундтреки", "Music", "Home")</li>
+                                               
                         </ul>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.Musictime
+﻿
 @{
     ViewBag.Title = "Music";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,19 +6,24 @@
 
 
 <div class="d">
-
+    <h4>System Of A Down - Lonely Day</h4>
     <audio controls>
-
+        
         <source src="~/Content/music/System Of A Down - Lonely Day [с сайта www.ololo.fm].mp3">
     </audio>
-    <p>
-        Дата создания песни:
-        @Model.songtime.ToShortDateString()
-      </p>
-    <p>  Прошло вермени
-   
-        @Model.differ.Days
-    дней
-    </p>
+    <hr> 
+    <h4>Sting - Shape of my heart</h4>
+    <audio controls>
+       
+        <source src="~/Content/music/Sting - Shape of my heart.mp3">
+    </audio>
+    <hr> 
+    <h4>Yann Tiersen - A Quai</h4>
+            <audio controls>
+                
+                <source src="~/Content/music/Yann Tiersen - A Quai [ВсеСаундтреки.рф].mp3">
+     </audio>
+    <hr> 
+
     
 </div>
