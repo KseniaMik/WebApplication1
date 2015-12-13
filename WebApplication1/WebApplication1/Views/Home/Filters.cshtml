@@ -17,12 +17,16 @@
 
 @using (Html.BeginForm("FilterdFilms", "Home"))
 {
-    <div>
-        <p>Выберите жанр @Html.DropDownListFor(x=> x.genre,sli)</p>
-        <p>Введите год @Html.TextBoxFor(x => x.year)</p>
-        <input type="submit" value="Отправить">
-    </div>
-}
+    <form role="form">
+        <div>
+            <div class="form-group">
+            <p><label>Выберите жанр</label> @Html.DropDownListFor(x => x.genre, sli, new { @class = "form-control" })</p>
+            <p><label>Введите год</label> @Html.TextBoxFor(x => x.year, new { @class = "form-control" })</p>
+            <input type="submit" value="Фильтровать" class="btn btn-default">
+            </div>
+        </div>
+    </form>
+        }
 
 </div>
 

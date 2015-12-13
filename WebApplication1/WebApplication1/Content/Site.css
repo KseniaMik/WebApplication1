@@ -66,34 +66,7 @@ div#carousel ~ span {
   line-height: 0; }
 div#carousel ~ span:hover { color: #888; cursor: pointer; }
 /*стили для сайта*/
-.b {
-            float: left;
-            background: white;
-            text-align: center;
-            width: 67%;
-            padding: 30px;
-            font-size: 23px;
-        }
-
-            .c {
-                float: left;
-                height: 350px;
-                padding: 15px;
-                font-size: 20px;
-                text-align: left;
-                background: lightyellow;
-            }
-
-            .d{
-color:black;
-background: lightgrey;
-text-align:center;
-width: 85%;
-padding: 7%;
-font-size: 25px;
-font-color: blue;
-}
-        
+   
             .menu{
                 font-size: 20px;
             }

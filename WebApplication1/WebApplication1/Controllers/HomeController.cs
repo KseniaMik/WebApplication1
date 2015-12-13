@@ -8,6 +8,7 @@ using WebApplication1.Models;
 using WebApplication1.DAO;
 using System.IO;
 
+
 namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
@@ -16,12 +17,13 @@ namespace WebApplication1.Controllers
 
         public ActionResult Index(Initializ init)
         {
-            Response.Cookies["userName"].Value = init.kto;
-          
 
-
-
-            return RedirectToAction("Films");
+                      
+                Response.Cookies["userName"].Value = init.kto;
+            
+                
+           return RedirectToAction("Films");
+        
         }
         public ActionResult Index()
         {
@@ -106,22 +108,30 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult AddFilm(Movie movi)
         {
-            if (Request.Files.Count > 0)
+            if (ModelState.IsValid == true)
             {
-                var file = Request.Files[0];
-
-                if (file != null && file.ContentLength > 0)
+                if (Request.Files.Count > 0)
                 {
-                    var fileName = Path.GetFileName(file.FileName);
-                    movi.Images = fileName;
+                    var file = Request.Files[0];
 
-                    var path = Path.Combine(Server.MapPath("~/Content/image/"), fileName);
-                    file.SaveAs(path);
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(file.FileName);
+                        movi.Images = fileName;
+
+                        var path = Path.Combine(Server.MapPath("~/Content/image/"), fileName);
+                        file.SaveAs(path);
+                    }
                 }
-            }
 
-            Addedfilm.Saver(movi);
-            return RedirectToAction("Films");
+                Addedfilm.Saver(movi);
+                return RedirectToAction("Films");
+            }
+            else
+            {
+                return View(movi);
+            }
+    
 
         }
 

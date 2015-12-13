@@ -3,15 +3,24 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
 @using (Html.BeginForm("Index"))
 {
+    <form role="form">
+        
+        <h3 class="text-center">Добро пожаловать на сайт!!</h3>
 
-    <h3>Добро пожаловать на сайт!!</h3>
-<p>
-    Введите Ваше имя
-    @Html.TextBoxFor(x => x.kto)
-    <input type="submit" value="Отправить">
-
-</p>
-}
+        <div class="form-group">
+        <p>
+            
+               
+                <label>Введите Ваше имя</label>
+                @Html.TextBoxFor(x => x.kto, new { @class = "form-control" })
+                <input type="submit" value="Отправить" class="btn btn-default">
+            
+        </p>
+        </div>
+   
+        </form>
+        }

@@ -347,3 +347,6 @@ C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplicat
 C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.Cache
 C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.Addimage.resources
 C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.Description.resources
+C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.first.resources
+C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.validation.resources
+C:\Users\User\Desktop\project webAPP\WebApplication1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.finaly.resources

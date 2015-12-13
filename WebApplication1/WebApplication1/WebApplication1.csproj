@@ -188,6 +188,18 @@
     <Compile Include="Migrations\201512111749343_Description.Designer.cs">
       <DependentUpon>201512111749343_Description.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512131144197_first.cs" />
+    <Compile Include="Migrations\201512131144197_first.Designer.cs">
+      <DependentUpon>201512131144197_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512131154507_validation.cs" />
+    <Compile Include="Migrations\201512131154507_validation.Designer.cs">
+      <DependentUpon>201512131154507_validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512131201140_finaly.cs" />
+    <Compile Include="Migrations\201512131201140_finaly.Designer.cs">
+      <DependentUpon>201512131201140_finaly.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Filter.cs" />
@@ -213,7 +225,7 @@
     <Content Include="Content\music\System Of A Down - Lonely Day [с сайта www.ololo.fm].mp3" />
     <Content Include="Content\music\Yann Tiersen - A Quai [ВсеСаундтреки.рф].mp3" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="DAO\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -273,9 +285,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="DAO\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="DAO\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="DAO\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -289,6 +301,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512111749343_Description.resx">
       <DependentUpon>201512111749343_Description.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512131144197_first.resx">
+      <DependentUpon>201512131144197_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512131154507_validation.resx">
+      <DependentUpon>201512131154507_validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512131201140_finaly.resx">
+      <DependentUpon>201512131201140_finaly.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
